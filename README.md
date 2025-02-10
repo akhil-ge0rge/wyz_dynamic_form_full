@@ -27,4 +27,16 @@
    ```bash
    http://localhost:3000/api/form
 
+## Running App
+
+1. **Navigate to the project directory:**
+
+   ```bash
+   cd wyz
+2. **Install dependencies:**
+   ```bash
+   flutter pub get
+
+3. **Run the project** 
+
 
