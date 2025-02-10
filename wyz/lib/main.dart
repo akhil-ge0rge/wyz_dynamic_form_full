@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => di<FormProvider>())
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Dynamic Form',
         theme: ThemeData(
           primarySwatch: Colors.blue,
