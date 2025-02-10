@@ -48,7 +48,14 @@ class CustomDatePicker extends StatelessWidget {
             decoration: InputDecoration(
               labelText: field.label,
               hintText: field.placeholder ?? "Select Date",
-              border: const OutlineInputBorder(),
+              border: OutlineInputBorder(
+                borderSide:
+                    BorderSide(color: fieldColor ?? Colors.black, width: 3),
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(15),
+                  bottomRight: Radius.circular(15),
+                ),
+              ),
             ),
             // [TextEditingController] to show the selected date in YYYY-MM-DD format
             controller: TextEditingController(

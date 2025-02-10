@@ -29,7 +29,13 @@ class CustomTextField extends StatelessWidget {
         decoration: InputDecoration(
           labelText: field.label,
           hintText: field.placeholder,
-          border: const OutlineInputBorder(),
+          border: OutlineInputBorder(
+            borderSide: BorderSide(color: fieldColor ?? Colors.black, width: 3),
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(15),
+              bottomRight: Radius.circular(15),
+            ),
+          ),
         ),
         style: TextStyle(color: fieldColor, fontWeight: fontWeight),
         onChanged: (value) {

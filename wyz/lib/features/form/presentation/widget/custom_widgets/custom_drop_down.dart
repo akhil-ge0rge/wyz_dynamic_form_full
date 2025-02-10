@@ -46,7 +46,14 @@ class CustomDropDown extends StatelessWidget {
             //displaying label and error text
             decoration: InputDecoration(
               labelText: field.label,
-              border: const OutlineInputBorder(),
+              border: OutlineInputBorder(
+                borderSide:
+                    BorderSide(color: fieldColor ?? Colors.black, width: 3),
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(15),
+                  bottomRight: Radius.circular(15),
+                ),
+              ),
               errorText: state.errorText,
             ),
             child: DropdownButtonHideUnderline(

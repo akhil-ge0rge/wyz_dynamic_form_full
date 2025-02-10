@@ -60,8 +60,11 @@ class _FormScreenState extends State<FormScreen> {
                 // Show [Skelton Loader] While [Loading] State while ApiFetching
                 return const Skeletonizer(child: Text('Dynamic Form'));
               case Status.error:
-                // Display [Error Message] While Error Happens while ApiFetching
-                return Text(value!.message.toString());
+                // Display Error Happens while ApiFetching
+                return const Text(
+                  "Error",
+                  style: TextStyle(color: Colors.red),
+                );
               case Status.completed:
                 // Show The [Form Title] after sucessfully completing ApiFetching
                 return Text(value?.data?.formTitle ?? 'Dynamic Form');
@@ -81,7 +84,16 @@ class _FormScreenState extends State<FormScreen> {
 
             /// **Show [Error Message] While Fetching Data**
             case Status.error:
-              return Text(value!.message.toString());
+              return Padding(
+                padding: const EdgeInsets.all(15),
+                child: Text(
+                  value!.message.toString(),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 17,
+                  ),
+                ),
+              );
 
             case Status.completed:
               //Managing empty form case
