@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:wyz/core/response/app_response.dart';
+import 'package:wyz/core/widget/error_widget.dart';
 import 'package:wyz/features/form/domain/entities/dynamic_form.dart';
 import 'package:wyz/features/form/presentation/widget/form_field_widget.dart';
 import 'package:wyz/features/form/presentation/widget/skeleton/form_skeleton.dart';
@@ -84,15 +85,8 @@ class _FormScreenState extends State<FormScreen> {
 
             /// **Show [Error Message] While Fetching Data**
             case Status.error:
-              return Padding(
-                padding: const EdgeInsets.all(15),
-                child: Text(
-                  value!.message.toString(),
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 17,
-                  ),
-                ),
+              return CustomErrorWidget(
+                message: value?.message ?? "Something went wrong",
               );
 
             case Status.completed:

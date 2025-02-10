@@ -22,7 +22,6 @@ class FormRemoteDataSourceImpl implements FormRemoteDataSource {
       final response =
           await client.get(Uri.parse('http://localhost:3000/api/form'));
       if (response.statusCode == 200) {
-        log(response.toString());
         final data = json.decode(response.body);
         return DynamicFormModel.fromJson(data);
       } else {

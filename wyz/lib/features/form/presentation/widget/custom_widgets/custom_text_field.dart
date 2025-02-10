@@ -65,8 +65,7 @@ class CustomTextField extends StatelessWidget {
             // Pattern matching check.
             if (field.validation!.pattern != null && value != null) {
               final regex = RegExp(field.validation!.pattern!);
-              log(field.validation!.pattern.toString());
-              log((!regex.hasMatch(value)).toString());
+
               if (!regex.hasMatch(value)) {
                 return field.validation!.errorMessage ??
                     "${field.label} is invalid.";

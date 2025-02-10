@@ -23,7 +23,9 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Dynamic Form',
-        theme: ThemeData(primarySwatch: Colors.blue),
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
         home: const FormScreen(),
       ),
     );
